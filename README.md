@@ -1,4 +1,4 @@
-# Lab02 MicroFrameworks
+# Lab03 AREP
 
 En este laboratorio se desarrolló un servidor Http con el fin de poder realizar multiples solicitudes, para lograrlo 
 se utilizó javascript, css, java y librerias que nos permitan realizar el manejo de la red, más no se utilizaron frameworks

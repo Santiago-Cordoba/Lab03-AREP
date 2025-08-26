@@ -18,7 +18,7 @@ public class HttpServer {
     private static final List<Song> songs = new ArrayList<>();
     private static boolean running = true;
 
-    // New framework components
+
     private static Map<String, BiFunction<Request, Response, String>> getRoutes = new ConcurrentHashMap<>();
     private static String staticFilesBase = "src/main/resources";
     private static String contextPath = "/App";
@@ -38,7 +38,7 @@ public class HttpServer {
         songs.add(new Song("Hotel California", "Eagles"));
     }
 
-    // Framework API methods
+
     public static void staticfiles(String path) {
         staticFilesBase = path;
     }
