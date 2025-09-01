@@ -3,7 +3,7 @@ package edu.escuelaing.arem.ASE.app;
 
 import edu.escuelaing.arem.ASE.app.Annotations.*;
 @RestController
-public class Example {
+public class Controller {
 
     @GetMapping("/greeting")
     public String greet(@RequestParam(value = "name", defaultValue = "World") String name) {
@@ -14,5 +14,8 @@ public class Example {
     public String hi(){
         return "Greetings from Spring Boot!";
     }
+
+    @GetMapping("/pi")
+    public String pi(){return String.valueOf(Math.PI);}
 }
 

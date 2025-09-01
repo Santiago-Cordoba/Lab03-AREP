@@ -24,15 +24,19 @@ Vemos que la función de buscar canciones funciona de manera correcta.
 
 ![Descripción de la imagen](src/img/img_4.png)
 
-### Screenshoots of the second lab
+### Screenshoots of the third lab
 
 Aca podemos observar el funcionamiento cuando se ponen diferentes direcciones.
 
-Primero cuando se ingresa con "http://localhost:35000/App/hello?name=Santiago"
+Primero probaremos con lo añadido este laboratorio con "http://localhost:35000/string" recibimos un mensaje"
 
-![Descripción de la imagen](src/img/img_5.png)
+![Descripción de la imagen](src/img/img_11.png)
 
-Ahora podemos observar como retorna el número pi con la dirección "http://localhost:35000/App/pi"
+Ahora se mostrara que se puede recibir parametros con lo añadido del microSpringBoot con "http://localhost:35000/greeting?name=PruebaLab"
+
+![Descripción de la imagen](src/img/img_12.png)
+
+Ahora podemos observar como retorna el número pi con la dirección "http://localhost:35000/pi"
 
 ![Descripción de la imagen](src/img/img_6.png)
 
@@ -45,7 +49,6 @@ Con la dirección "http://localhost:35000/index.html" se trae el proyecto de mú
 ![Descripción de la imagen](src/img/img_8.png)
 
 Y por último con la dirección "http://localhost:35000/api/songs" traemos a forma de JSON las listas de música de ejemplo en el proyecto.
-
 
 ![Descripción de la imagen](src/img/img_9.png)
 
@@ -69,7 +72,7 @@ A continuación se va a ver el paso a paso para la instalación del proyecto.
 1. Clonar el repositorio
 
 ```
-git clone https://github.com/Santiago-Cordoba/Lab02-MicroFrameworks-AREP.git
+git clone https://github.com/Santiago-Cordoba/Lab03-AREP.git
 ```
 
 2. Compilar el proyecto con maven (requisito previamente escrito)
@@ -78,14 +81,20 @@ git clone https://github.com/Santiago-Cordoba/Lab02-MicroFrameworks-AREP.git
 mvn package
 ```
 
-3. Desde un IDE ejecutar la clase HttpServer
+3. Ahora se colocará en la terminal el siguiente comando para ejecutar la clase MicroSpringBoot
+
+```
+java -cp target/Lab01-AREP-1.0-SNAPSHOT.jar edu.escuelaing.arem.ASE.app.MicroSpringBoot edu.escuelaing.arem.ASE.app.Controller
+
+```
 
 4. Una vez se esté ejecutando de manera correcta la clase HttpServer, en el navegador podremos colocar las siguientes direcciones para pobrar el funcionamiento:
 
 
 ```
-http://localhost:35000/App/hello?name=Santiago
-http://localhost:35000/App/pi
+http://localhost:35000/string
+http://localhost:35000/greeting?name=PruebaLab
+http://localhost:35000/pi
 http://localhost:35000/image
 http://localhost:35000/index.html
 http://localhost:35000/api/songs 
@@ -97,13 +106,6 @@ Se corren los test de las diferentes funciones que se programaron para probar el
 
 ![Descripción de la imagen](src/img/img_10.png)
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ### Architecture
 
@@ -127,14 +129,16 @@ Directorio:
 ```
 web-framework/
 ├── src/
-│   └── main/
-│       └── java/
-│           ├── edu/escuelaing/arem/ASE/app/
-│           │   ├── HttpServer.java
-│           │   └── Song.java
-│           │   └── Request.java
-│           │   └── Response.java
-│           └── ExampleApp.java
+│   ├── HttpServer.java
+│   ├── Song.java
+│   ├── Request.java
+│   ├── Response.java
+│   ├── Controller.java
+│   ├── MicroSpringBoot.java
+│   └── Annotations/
+│       ├── GetMapping.java
+│       ├── RequestParam.java
+│       └── RestController.java
 ├── resources/
 │   └── webroot/
 │       ├── index.html
@@ -159,5 +163,6 @@ web-framework/
 * Conocimiento de como montar un server Http sin la necesidad de usar frameworks como Spring
 * Entendimiento del funcionamiento de los Sockets
 * Entendimiento del funcionamiento de los microframeworks
+* Entendimiento sobre el funcionamiento de SpringBoot por debajo
 
 

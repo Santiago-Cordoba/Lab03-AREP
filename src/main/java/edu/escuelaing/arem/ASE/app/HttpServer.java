@@ -19,9 +19,11 @@ public class HttpServer {
     private static boolean running = true;
 
 
-    private static Map<String, BiFunction<Request, Response, String>> getRoutes = new ConcurrentHashMap<>();
+    static Map<String, BiFunction<Request, Response, String>> getRoutes = new ConcurrentHashMap<>();
     private static String staticFilesBase = "src/main/resources";
     private static String contextPath = "/App";
+    public static Map<String, BiFunction<Request, Response, String>> getRoutes = new ConcurrentHashMap<>();
+    public static Map<String, BiFunction<Request, Response, String>> postRoutes = new ConcurrentHashMap<>();
 
     static {
         CONTENT_TYPES.put("html", "text/html");
@@ -55,7 +57,7 @@ public class HttpServer {
         // Example usage of the new framework API
         staticfiles("src/main/resources");
         get("/hello", (req, resp) -> "Hello " + req.getQueryParam("name"));
-        get("/pi", (req, resp) -> String.valueOf(Math.PI));
+
 
         ServerSocket serverSocket = startServer(35000);
         while (running) {
