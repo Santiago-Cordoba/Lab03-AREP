@@ -22,7 +22,7 @@ public class HttpServer {
     static Map<String, BiFunction<Request, Response, String>> getRoutes = new ConcurrentHashMap<>();
     private static String staticFilesBase = "src/main/resources";
     private static String contextPath = "/App";
-    public static Map<String, BiFunction<Request, Response, String>> getRoutes = new ConcurrentHashMap<>();
+    
     public static Map<String, BiFunction<Request, Response, String>> postRoutes = new ConcurrentHashMap<>();
 
     static {
